@@ -236,7 +236,7 @@ https://github.com/vnyennhi/docker-kafka-cassandra-faker-api
 To put up the data-vis container
 
 ```
-docker-compose -f data-vis/docker-compose.yml up -d
+docker-compose -f data-vis/docker-compose.yml up -d --build
 ```
 
 
