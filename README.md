@@ -1,6 +1,6 @@
 # How to Build a Distributed Big Data Pipeline Using Kafka, Cassandra, and Jupyter Lab with Docker
 
-You can use the resources in this github to deploy an end-to-end data pipeline on your local computer using Docker containerized Kafka (data streaming), Cassandra (NoSQL database) and Jupyter Lab (data analysis Visualization).
+You can use the resources in this github to deploy an end-to-end data pipeline on your local computer using Docker containerized Kafka (data streaming), Cassandra (NoSQL database) and Jupyter Lab (data analysis visualization).
 
 This bases on the repo https://github.com/salcaino/sfucmpt733/tree/main/foobar-kafka
 Substantial changes and bug fixes have been made. Tested on Windows 10. 
