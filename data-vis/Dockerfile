@@ -6,5 +6,6 @@ RUN python -m pip install --upgrade pip && \
 
 COPY python ./
 RUN jupyter trust ./blog-visuals.ipynb
+RUN jupyter trust ./blog-visuals2.ipynb
 EXPOSE 8888
 CMD jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''

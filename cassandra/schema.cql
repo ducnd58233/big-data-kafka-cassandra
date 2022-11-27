@@ -21,3 +21,25 @@ CREATE TABLE twitterdata (
   classification TEXT,
   PRIMARY KEY (location, tweet_date)
 );
+
+CREATE TABLE twitter2data (
+  tweet_date TIMESTAMP,
+  location TEXT,
+  tweet TEXT,
+  classification TEXT,
+  PRIMARY KEY (location, tweet_date)
+);
+
+CREATE TABLE IF NOT EXISTS fakerdata (
+  name TEXT,
+  address TEXT,
+  year INT,
+  job TEXT,
+  phone TEXT,
+  email TEXT,
+  company TEXT,
+  credit_card_number TEXT,
+  credit_card_expire TEXT,
+  credit_card_provider TEXT,
+  PRIMARY KEY (name, address)
+);

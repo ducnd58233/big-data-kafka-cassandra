@@ -10,7 +10,7 @@ TWITTER_API_LANGS_FILTER = ['en']
 
 # Twitter API Keys
 config = configparser.ConfigParser()
-config.read('twitter_service.cfg')
+config.read('twitter_service-API1.1.cfg')
 api_credential = config['twitter_api_credential']
 access_token = api_credential['access_token']
 access_token_secret = api_credential['access_token_secret']
@@ -35,7 +35,7 @@ class stream_listener(tweepy.StreamListener):
         super(stream_listener, self).__init__()
         self.producer = KafkaProducer(
             bootstrap_servers=KAFKA_BROKER_URL,
-            value_serializer=lambda x: json.dumps(x).encode('utf8'),
+            value_serializer=lambda x: json.dumps(x).encode('utf-8'),
             api_version=(0, 10, 1)
         )
 

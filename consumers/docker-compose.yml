@@ -11,6 +11,16 @@ services:
       SINK_TOPIC_NAME: twittersink
       SLEEP_TIME: 10
       BATCH_SIZE: 10
+  tweet2consumer:
+    container_name: twitter2consumer
+    image: twitterconsumer
+    build: .
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: twitter2
+      SINK_TOPIC_NAME: twitter2sink
+      SLEEP_TIME: 10
+      BATCH_SIZE: 10
   weatherconsumer:
     container_name: weatherconsumer
     image: twitterconsumer
@@ -20,6 +30,15 @@ services:
       CASSANDRA_HOST: cassandradb
       CASSANDRA_KEYSPACE: kafkapipeline
     command: ["python", "-u","python/weather_consumer.py"]
+  fakerconsumer:
+    container_name: fakerconsumer
+    image: twitterconsumer
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: faker
+      CASSANDRA_HOST: cassandradb
+      CASSANDRA_KEYSPACE: kafkapipeline
+    command: ["python", "-u","python/faker_consumer.py"]
 
 networks:
   default:

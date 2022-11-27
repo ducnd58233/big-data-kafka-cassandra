@@ -7,9 +7,9 @@ import pandas as pd
 nltk.download('omw-1.4', download_dir='/usr/app/nltk_data')
 
 if __name__ == "__main__":
-    print("Starting Twitter data consumer")
+    print("Starting Twitter API 2 data consumer")
 
-    SINK_TOPIC = os.environ.get("SINK_TOPIC_NAME", "twittersink")
+    SINK_TOPIC = os.environ.get("SINK_TOPIC_NAME", "twitter2sink")
 
     path = os.path.dirname(os.path.realpath(__file__))
     parent = os.path.dirname(path)
@@ -26,8 +26,7 @@ if __name__ == "__main__":
     consumer = KafkaConsumer(TOPIC_NAME, bootstrap_servers=[KAFKA_BROKER_URL])
     producer = KafkaProducer(
             bootstrap_servers=KAFKA_BROKER_URL,
-            value_serializer=lambda x: x.encode('utf8'),
-            api_version=(0, 10, 1)
+            value_serializer=lambda x: x.encode('utf-8'),
         )
     print('Waiting for msg...')
     for msg in consumer:
